@@ -1,4 +1,4 @@
-package lib;
+package testcase;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -13,8 +13,8 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+
 
 public class excelReader {
     public FileInputStream fis = null;
@@ -23,6 +23,7 @@ public class excelReader {
     private XSSFRow row = null;
     private XSSFCell cell = null;
     String path = null;
+
 
     public excelReader() throws IOException {
         path = System.getProperty("user.dir") + "\\TestDATA\\SeleniumTestDATA.xlsx";
@@ -79,16 +80,17 @@ public class excelReader {
 
     }
 
-    public void readExcel() throws InterruptedException, IOException {
+
+    public void readExceltest() throws InterruptedException, IOException {
 
         Thread.sleep(10000);
-        File dir = new File(System.getProperty("user.dir") + "\\TestDATA\\SeleniumTestDATA.xlsx");
+        File dir = new File(System.getProperty("user.dir") + "\\TestDATA");
         File[] dirContents = dir.listFiles();
         String fileName = dirContents[0].getName();
-        String url = System.getProperty("user.dir") + "\\TestDATA\\SeleniumTestDATA.xlsx\\" + fileName;
+        String url = System.getProperty("user.dir") + "\\TestDATA\\" + fileName;
         File file = new File(url);
         FileInputStream fis = new FileInputStream(file);
-        Workbook workbook = new HSSFWorkbook(fis);
+        Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet = workbook.getSheetAt(0);
         //Iterate through rows and columns to read data
         for (Row row : sheet) {
@@ -98,19 +100,11 @@ public class excelReader {
             System.out.println();  //move to next row
         }
         fis.close();
-
     }
 
 
-
-
-
-
-
-
-
     @Test
-    public void row_Column_Count() throws IOException {
+    public void runner() throws IOException, InterruptedException {
         excelReader red = new excelReader();
         System.out.println("LoginTestData sheet hase row");
         System.out.println(red.sheetRowCount("LoginTestData"));
@@ -132,11 +126,13 @@ public class excelReader {
         System.out.println(red.getDataExcelbyColumnName("LoginTestData", "Password", 4));
 
         System.out.println();
+        red.readExceltest();
+
 
 
     }
-}
 
+}
 
 
 
