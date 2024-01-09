@@ -81,6 +81,7 @@ public class excelReader {
     }
 
 
+    //Get All data from Excel
     public void readExceltest() throws InterruptedException, IOException {
 
         Thread.sleep(10000);
