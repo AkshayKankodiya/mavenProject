@@ -67,16 +67,20 @@ public class excelReader {
             row = sheet.getRow(0);
             cell = row.getCell(i);
 
+
             if (cell.getStringCellValue().equals(colName)) {
                 colNum = cell.getColumnIndex();
                 break;
+
 
             }
 
         }
         row = sheet.getRow(rowNum);
         cell = row.getCell(colNum);
+
         return (cell.getStringCellValue());
+
 
     }
 
@@ -97,7 +101,10 @@ public class excelReader {
         for (Row row : sheet) {
             for (Cell cell : row) {
                 System.out.print(cell.toString() + "\t");
+                System.out.print("-------");
+
             }
+            System.out.print("|");
             System.out.println();  //move to next row
         }
         fis.close();
