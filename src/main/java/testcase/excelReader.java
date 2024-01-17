@@ -97,17 +97,45 @@ public class excelReader {
         FileInputStream fis = new FileInputStream(file);
         Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet = workbook.getSheetAt(0);
-        //Iterate through rows and columns to read data
-        for (Row row : sheet) {
-            for (Cell cell : row) {
-                System.out.print(cell.toString() + "\t");
-                System.out.print("-------");
 
+        // Get the header row to identify the password column
+        Row headerRow = sheet.getRow(0);
+
+
+        // Iterate through rows and columns to read data
+        for (Row row : sheet) {
+            for (int i = 0; i < row.getLastCellNum(); i++) {
+                Cell cell = row.getCell(i);
+
+                // Check if the current row is the header row
+                if (row.getRowNum() == 0) {
+                    System.out.print(cell.toString() + "\t");
+                } else {
+                    // Check if the current column corresponds to a password column
+                    if (isPasswordColumn(headerRow.getCell(i).toString())) {
+                        System.out.print(maskPassword(cell.toString(),2) + "\t");
+                    } else {
+                        System.out.print(cell.toString() + "\t");
+                    }
+                }
+                System.out.print("-------");
             }
             System.out.print("|");
-            System.out.println();  //move to next row
+            System.out.println();  // Move to the next row
         }
         fis.close();
+    }
+
+    private static String maskPassword(String password, int numberOfCharactersToMask) {
+        // Mask only the specified number of characters
+        int length = Math.min(numberOfCharactersToMask, password.length());
+        String maskedPart = "*".repeat(length);
+        return maskedPart + password.substring(length);
+    }
+
+    private static boolean isPasswordColumn(String columnHeader) {
+        // Add logic to identify password columns based on column header or any other criteria
+        return columnHeader.toLowerCase().contains("password");
     }
 
 

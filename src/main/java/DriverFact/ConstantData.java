@@ -20,6 +20,9 @@ public class ConstantData {
     public static String MOBILE = "9822664466";
     public static String ExpectedSuccessPageURL = "https://www.automationexercise.com/account_created";
 
+    public static String environmentName = System.getProperty("env","Akshaymaven");
+
+
 
 
 }

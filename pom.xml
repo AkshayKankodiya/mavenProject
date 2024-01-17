@@ -39,15 +39,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -86,22 +77,6 @@
 
     </dependencies>
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
 
         <pluginManagement>
             <plugins>
@@ -110,6 +85,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.12.1</version>
                     <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
                         <!-- put your configurations here -->
                     </configuration>
                 </plugin>
@@ -118,10 +95,25 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.2.5</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+                    <configuration>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <suiteXmlFiles>${filename}</suiteXmlFiles>
+
+                     </configuration>
+                 </plugin>
+             </plugins>
+         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 
-</project>
+ </project>
