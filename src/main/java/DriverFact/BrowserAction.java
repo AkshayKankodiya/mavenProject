@@ -7,7 +7,9 @@ public class BrowserAction {
     public WebDriver driver;
 
     public WebDriver openBrowser() {
-        System.setProperty("webdriver.chrome.driver", "D://Projects//Java//mavenProject//Webdriver/chromedriver.exe");
+        // set dynamic path for run all type
+        String path = System.getProperty("user.dir") + "\\Webdriver\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver",path);
         WebDriver driver = new ChromeDriver();
 
         //driver = new ChromeDriver();
