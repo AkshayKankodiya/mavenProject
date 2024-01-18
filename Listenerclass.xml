@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RegistrationSuitfinal">
-    <test verbose="2" preserve-order="true" name="RegistrastionTest">
+<suite name="Listnerclass_Suit">
+    <listeners>
+        <listener class-name="DriverFact.Listeners"></listener>
+    </listeners>
+
+    <test name="RegistrastionTestwithListners1">
         <classes>
             <class name="DemoFreamwork.Automation_test">
                 <methods>
@@ -12,7 +16,7 @@
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="RegSuit2">
+    <test verbose="2" preserve-order="true" name="excelreaderWithListner">
         <classes>
             <class name="testcase.excelReader">
                 <methods>

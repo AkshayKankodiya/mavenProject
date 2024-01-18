@@ -17,31 +17,31 @@ public class Action_class extends WaitActions {
     }
 
     public void clickElement(WebElement element, String fildName) throws InterruptedException {
-        isElementPresentAndClick(element ,fildName);
+        isElementPresentAndClick(element, fildName);
         Explicitly_Clickeble(element);
         element.click();
 
     }
 
 
-    public void inputText(WebElement element, String text,String fildName) {
-        isElementPresentAndClick(element,fildName);
+    public void inputText(WebElement element, String text, String fildName) {
+        isElementPresentAndClick(element, fildName);
         Explicitly_Clickeble(element);
         element.clear();
         element.sendKeys(text);
     }
 
-        //Dropdown Select BY visible text
-    public void selectByVisibilityText(WebElement element, String value,String fildName) {
-        isElementPresentAndClick(element,fildName);
+    //Dropdown Select BY visible text
+    public void selectByVisibilityText(WebElement element, String value, String fildName) {
+        isElementPresentAndClick(element, fildName);
         Explicitly_Clickeble(element);
         Select select = new Select(element);
         select.selectByVisibleText(value);
     }
 
 
-    public void selectByIndex(WebElement element, int index,String fildName) {
-        isElementPresentAndClick(element,fildName);
+    public void selectByIndex(WebElement element, int index, String fildName) {
+        isElementPresentAndClick(element, fildName);
         Explicitly_Clickeble(element);
         Select select = new Select(element);
         select.selectByIndex(index);
@@ -64,9 +64,9 @@ public class Action_class extends WaitActions {
     }
 
     public void verifyAccountCreateElement(WebElement element) {
-            Assert.assertTrue(element.isDisplayed(), "Element related to '" + element + "' not displayed on the page");
+        Assert.assertTrue(element.isDisplayed(), "Element related to '" + element + "' not displayed on the page");
 
-            System.out.println("Assertion is done with success message and element");
+        System.out.println("Assertion is done with success message and element");
 
     }
 
@@ -79,11 +79,6 @@ public class Action_class extends WaitActions {
             System.out.println("Invalid assertion type");
         }
     }
-
-
-
-
-
 
 
 }
