@@ -3,6 +3,7 @@ package DemoFreamwork;
 import DriverFact.*;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.TestNG;
 
 import java.util.Random;
 
@@ -30,6 +31,8 @@ public class Automation_Page extends ElementsActions {
     // Setup Browser
     public void setupBrowserpage() throws InterruptedException {
         driver.get(ConstantData.BASE_URL);
+
+
         // actionClass.clickElement(signUpbutton);
     }
 

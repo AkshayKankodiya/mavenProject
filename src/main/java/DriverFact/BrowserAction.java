@@ -1,7 +1,9 @@
 package DriverFact;
 
+import DemoFreamwork.Automation_test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.TestNG;
 
 public class BrowserAction {
     public WebDriver driver;
@@ -16,6 +18,8 @@ public class BrowserAction {
         driver.manage().window().maximize();
        // driver.navigate().to("https://automationexercise.com/");
         return driver;
+
+
     }
     }
 

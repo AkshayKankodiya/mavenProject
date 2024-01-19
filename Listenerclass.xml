@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
 <suite name="Listnerclass_Suit">
     <listeners>
-        <listener class-name="DriverFact.Listeners"></listener>
+        <listener class-name="DriverFact.ListenersTest"></listener>
     </listeners>
 
     <test name="RegistrastionTestwithListners1">
