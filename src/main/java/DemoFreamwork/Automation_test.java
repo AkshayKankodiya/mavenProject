@@ -3,16 +3,18 @@ package DemoFreamwork;
 
 import DriverFact.BrowserAction;
 import DriverFact.ListenersTest;
+import DriverFact.ListnersWithScreenshotAllure;
 import io.qameta.allure.Attachment;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.TestNG;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-
+@Listeners({ListnersWithScreenshotAllure.class})
 
 public class Automation_test {
     public WebDriver driver;
@@ -21,7 +23,8 @@ public class Automation_test {
 
 
 
-    @BeforeClass
+
+    @BeforeTest
     public void setup() {
         Reporter.log("driver setup");
         BrowserAction browserAction = new BrowserAction();
@@ -59,5 +62,13 @@ public class Automation_test {
     public void closeDriver() {
         driver.quit();
     }
+
+
+    @BeforeClass
+    public void sampleTest() {
+
+    }
+        /*page.clickSetting(page.radioBtnMale);
+        page.inputtext(page.fNameTextbox, ConstantData.FIRSTNAME);*/
 
 }
