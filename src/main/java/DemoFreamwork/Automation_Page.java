@@ -3,7 +3,6 @@ package DemoFreamwork;
 import DriverFact.*;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.TestNG;
 
 import java.util.Random;
 
@@ -71,12 +70,21 @@ public class Automation_Page extends ElementsActions {
         actionClass.inputText(mobTextbox, ConstantData.MOBILE,"Mobile Text box Field");
         actionClass.clickElement(createAccBtn,"Create Account Button");
         System.out.println("Account is created Succsessfully");
+
+
+
+    }
+    public void assertionPage(){
+
         actionClass.verifyAccountCreateElement(SuccessMessage);
         actionClass.verifyAccountCreateUrl(ConstantData.ExpectedSuccessPageURL);
         actionClass.assertWithCondition(ConstantData.ExpectedSuccessPageURL,SuccessMessage);
 
-
     }
+
+
+
+
     /*
     public void clickSetting(WebElement element) throws InterruptedException {
         actionClass.clickElement(element);

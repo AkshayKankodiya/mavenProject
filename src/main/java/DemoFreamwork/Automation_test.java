@@ -2,14 +2,8 @@ package DemoFreamwork;
 
 
 import DriverFact.BrowserAction;
-import DriverFact.ListenersTest;
 import DriverFact.ListnersWithScreenshotAllure;
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.TestNG;
 import org.testng.annotations.*;
@@ -55,6 +49,11 @@ public class Automation_test {
         /*page.clickSetting(page.radioBtnMale);
         page.inputtext(page.fNameTextbox, ConstantData.FIRSTNAME);*/
     }
+    @Test(priority = 3, dependsOnMethods = "fillFormTest")
+    public void AssertionTest() {
+        page.assertionPage();
+
+    }
 
 
 
@@ -64,10 +63,7 @@ public class Automation_test {
     }
 
 
-    @BeforeClass
-    public void sampleTest() {
 
-    }
         /*page.clickSetting(page.radioBtnMale);
         page.inputtext(page.fNameTextbox, ConstantData.FIRSTNAME);*/
 
