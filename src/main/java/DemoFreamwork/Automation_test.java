@@ -3,6 +3,7 @@ package DemoFreamwork;
 
 import DriverFact.BrowserAction;
 import DriverFact.ListnersWithScreenshotAllure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.TestNG;
@@ -18,7 +19,7 @@ public class Automation_test {
 
 
 
-    @BeforeTest
+    @BeforeClass
     public void setup() {
         Reporter.log("driver setup");
         BrowserAction browserAction = new BrowserAction();
@@ -26,6 +27,7 @@ public class Automation_test {
         page = new Automation_Page(driver);
 
     }
+
 
     @Test(priority = 0)
     public void setupBrowserTest() throws InterruptedException {
@@ -40,7 +42,6 @@ public class Automation_test {
         page.randomEmailPage();
 
     }
-
     @Test(priority = 2, dependsOnMethods = "randomEmailTest")
     public void fillFormTest() throws InterruptedException {
         Reporter.log("form fillings ");
@@ -49,6 +50,7 @@ public class Automation_test {
         /*page.clickSetting(page.radioBtnMale);
         page.inputtext(page.fNameTextbox, ConstantData.FIRSTNAME);*/
     }
+
     @Test(priority = 3, dependsOnMethods = "fillFormTest")
     public void AssertionTest() {
         page.assertionPage();

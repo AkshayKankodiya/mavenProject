@@ -56,7 +56,7 @@ public class ElementsActions {
     @FindBy(xpath = "//button[text()='Create Account' and @type ='submit']")
     public WebElement createAccBtn;
     // Assuming there's a success message displayed after account creation
-    @FindBy(xpath = "//[contains(text(), 'Congratulations')]")
+    @FindBy(xpath = "//p[contains(text(), 'Congratulations')]")
     public WebElement SuccessMessage;
 
 
