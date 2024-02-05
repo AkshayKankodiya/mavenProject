@@ -8,7 +8,7 @@
 
     <test name="RegistrastionTestwithListners1">
         <classes>
-            <class name="DemoFreamwork.Automation_test">
+            <class name="DemoFreamwork.Automation_Test">
                 <methods>
                     <include name="setupBrowserTest"/>
                     <include name="randomEmailTest"/>

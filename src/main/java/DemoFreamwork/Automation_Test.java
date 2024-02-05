@@ -3,7 +3,6 @@ package DemoFreamwork;
 
 import DriverFact.BrowserAction;
 import DriverFact.ListnersWithScreenshotAllure;
-import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.TestNG;
@@ -11,7 +10,7 @@ import org.testng.annotations.*;
 
 @Listeners({ListnersWithScreenshotAllure.class})
 
-public class Automation_test {
+public class Automation_Test {
     public WebDriver driver;
     Automation_Page page;
     TestNG testng = new TestNG();

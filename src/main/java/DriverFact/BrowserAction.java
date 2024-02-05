@@ -1,12 +1,7 @@
 package DriverFact;
 
-import DemoFreamwork.Automation_test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.TestNG;
-
-
-import java.util.concurrent.TimeUnit;
 
 public class BrowserAction {
     public WebDriver driver;

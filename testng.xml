@@ -3,7 +3,7 @@
 <suite name="RegistrationSuitfinal">
     <test verbose="2" preserve-order="true" name="RegistrastionTest">
         <classes>
-            <class name="DemoFreamwork.Automation_test">
+            <class name="DemoFreamwork.Automation_Test">
                 <methods>
                     <include name="setupBrowserTest"/>
                     <include name="randomEmailTest"/>
