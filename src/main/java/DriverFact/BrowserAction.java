@@ -3,6 +3,8 @@ package DriverFact;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class BrowserAction {
     public WebDriver driver;
     public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<WebDriver>();
@@ -20,6 +22,7 @@ public class BrowserAction {
 
         //driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
        // driver.navigate().to("https://automationexercise.com/");
         return driver;
 
